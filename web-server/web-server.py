@@ -1,6 +1,6 @@
 from sheard.ClientThread import ClientThread
+from sheard.HttpHandler import HttpHandler
 from sheard.TcpServer import TcpServer
-from .HttpHandler import HttpHandler
 
 if __name__ == '__main__':
     server = TcpServer()

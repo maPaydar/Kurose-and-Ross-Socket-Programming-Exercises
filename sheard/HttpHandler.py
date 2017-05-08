@@ -11,8 +11,8 @@ class HttpHandler(Handler):
             data = Util.get_file_data(object, 'rb')
             headers = Util.get_simple_http_header('ok', {'Content-Type': '*/*', 'Content-Length': str(len(data))})
             Log.d('Response Headers = %s', headers)
-            client.connection.send(headers)
             Log.d('Response Data = %s', data)
+            client.connection.send(headers)
             client.connection.sendall(data)
             Log.i('Send data to client')
 

@@ -25,3 +25,13 @@ class Util:
     @staticmethod
     def encode_string(string, mode):
         return string.encode(mode)
+
+    @staticmethod
+    def receive_all(sock):
+        data = b''
+        while True:
+            part = sock.recv(4096)
+            data += part
+            if len(part) < 4096:
+                break
+        return data
