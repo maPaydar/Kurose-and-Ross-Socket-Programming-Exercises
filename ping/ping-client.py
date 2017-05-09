@@ -1,5 +1,6 @@
 import time
 import sheard.Client as Client
+from sheard.Log import Log
 
 if __name__ == '__main__':
     client = Client()
@@ -8,4 +9,4 @@ if __name__ == '__main__':
         start = time.time()
         client.receive()
         end = time.time()
-        print("RTT= {:.10f}ms".format((end - start) * 1000))
+        Log.i("RTT= {:.10f}ms".format((end - start) * 1000))

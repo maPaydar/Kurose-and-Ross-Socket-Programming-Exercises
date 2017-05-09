@@ -1,5 +1,7 @@
 import socket
 
+from sheard.Log import Log
+
 
 class Client:
     def __init__(self, sock=None):
@@ -8,13 +10,13 @@ class Client:
             self.sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
         else:
             self.sock = sock
-        print('Client created')
+        Log.i('Client created')
 
     def connect(self, host, port):
         self.host = host
         self.port = port
         self.sock.connect((host, port))
-        print('Client connected to server %s:%d', host, port)
+        Log.i('Client connected to server %s:%d', host, port)
 
     def send(self, msg):
         self.MSGLEN = len(msg)
@@ -30,14 +32,5 @@ class Client:
 
     def receive(self):
         chunk = self.sock.recvfrom(1024)
-        # BUFF_SIZE = 4096 # 4 KiB
-        # data = []
-        # while True:
-        #     part = self.sock.recvfrom(BUFF_SIZE)
-        #     data.append(part)
-        #     if len(part) < BUFF_SIZE:
-        #         # either 0 or end of data
-        #         break
-        # return b''.join(data)
         return chunk
 

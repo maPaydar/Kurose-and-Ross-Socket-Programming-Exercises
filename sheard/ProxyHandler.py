@@ -1,6 +1,7 @@
 import socket
 
 from sheard.Handler import Handler
+from sheard.Log import Log
 from sheard.Util import Util
 
 
@@ -12,12 +13,11 @@ class ProxyHandler(Handler):
             object = Util.get_object_from_http_request(str(data.rstrip()))
             if object in ProxyHandler.cache:
                 response = ProxyHandler.cache[object]
-                print('in cache')
+                Log.i('data %s was cached', object)
             else:
-                print('not in cache')
+                Log.i('data %s not cached', object)
                 response = self.send_to_web_server(data)
                 ProxyHandler.cache[object] = response
-                print('proxy reply to client' + str(response))
             client.connection.sendall(response)
             client.connection.close()
         except Exception:
