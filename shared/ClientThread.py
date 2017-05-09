@@ -1,5 +1,5 @@
 import threading
-from sheard.Log import Log
+from shared.Log import Log
 
 
 class ClientThread(threading.Thread):

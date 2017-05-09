@@ -1,4 +1,4 @@
-from sheard.SmtpMailer import SmtpMailer
+from shared.SmtpMailer import SmtpMailer
 
 if __name__ == '__main__':
     smtp = SmtpMailer('', '')

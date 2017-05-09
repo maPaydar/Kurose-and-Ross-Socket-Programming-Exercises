@@ -1,6 +1,6 @@
 import socket
 
-from sheard.Log import Log
+from shared.Log import Log
 
 
 class Client:

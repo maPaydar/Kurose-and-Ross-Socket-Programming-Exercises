@@ -1,6 +1,6 @@
-from sheard.ProxyHandler import ProxyHandler
-from sheard.TcpServer import TcpServer
-from sheard.ClientThread import ClientThread
+from shared.ProxyHandler import ProxyHandler
+from shared.TcpServer import TcpServer
+from shared.ClientThread import ClientThread
 
 if __name__ == '__main__':
     server = TcpServer('localhost', 8080)

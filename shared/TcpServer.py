@@ -1,4 +1,4 @@
-from sheard.Log import Log
+from shared.Log import Log
 import socket
 
 class TcpServer:

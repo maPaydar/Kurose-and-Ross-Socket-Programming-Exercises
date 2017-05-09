@@ -1,8 +1,8 @@
 import socket
 
-from sheard.Handler import Handler
-from sheard.Log import Log
-from sheard.Util import Util
+from shared.Handler import Handler
+from shared.Log import Log
+from shared.Util import Util
 
 
 class ProxyHandler(Handler):

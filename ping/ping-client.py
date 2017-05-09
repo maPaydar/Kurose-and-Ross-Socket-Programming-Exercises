@@ -1,6 +1,6 @@
 import time
-import sheard.Client as Client
-from sheard.Log import Log
+import shared.Client as Client
+from shared.Log import Log
 
 if __name__ == '__main__':
     client = Client()
